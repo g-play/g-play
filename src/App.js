@@ -3,6 +3,7 @@ import WelcomeWorld from "./components/WelcomeWorld";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import CreateGame from "./components/CreateGame";
+import EditGame from "./components/EditGame";
 function App() {
   return (
     <div id="box">
@@ -18,30 +19,7 @@ function App() {
 
   <CreateGame/>
 
-    <section id="edit-page" className="auth">
-        <form id="edit">
-            <div className="container">
-
-                <h1>Edit Game</h1>
-                <label htmlFor="leg-title">Legendary title:</label>
-                <input type="text" id="title" name="title" />
-
-                <label htmlFor="category">Category:</label>
-                <input type="text" id="category" name="category" />
-
-                <label htmlFor="levels">MaxLevel:</label>
-                <input type="number" id="maxLevel" name="maxLevel" min="1" />
-
-                <label htmlFor="game-img">Image:</label>
-                <input type="text" id="imageUrl" name="imageUrl" />
-
-                <label htmlFor="summary">Summary:</label>
-                <textarea name="summary" id="summary"></textarea>
-                <input className="btn submit" type="submit" value="Edit Game"/>
-
-            </div>
-        </form>
-    </section>
+<EditGame/>
 
     <section id="game-details">
         <h1>Game Details</h1>
