@@ -6,23 +6,34 @@ import CreateGame from "./components/CreateGame";
 import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
 import GameCatalog from "./components/GameCatalog";
+import { useState } from "react";
 function App() {
+
+  const  [page, setPage] = useState('/home')
+
+
   const routes = {
-    '/home':WelcomeWorld,
-    '/games':GameCatalog,
-    '/create-game':CreateGame
+    '/home':<WelcomeWorld/>,
+    '/games':<GameCatalog/>,
+    '/create-game':<CreateGame/>
   };
+  const navigationChangeHandler = (path) =>{
+    console.log(path)
+    setPage(path)
+  }
 
   return (
     <div id="box">
 
- <Header/>
+ <Header 
+ navigationChangeHandler={navigationChangeHandler}
+ />
 
     <main id="main-content">
     </main>
-
-<WelcomeWorld/>
-   <Login/>
+{routes[page]|| <h2>No Page Found!</h2>}
+{/* <WelcomeWorld/> */}
+   {/* <Login/>
  <Register/>
 
   <CreateGame/>
@@ -32,7 +43,7 @@ function App() {
 
 <GameDetails/>
   
-<GameCatalog/>
+<GameCatalog/> */}
    
 </div>
   );
