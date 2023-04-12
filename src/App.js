@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import CreateGame from "./components/CreateGame";
 import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
-import GameCatalog from "./components/GameCatalog";
+import GameCatalog from "./components/GameCatalog/GameCatalog";
 import { useState } from "react";
 function App() {
 
@@ -13,9 +13,12 @@ function App() {
 
 
   const routes = {
+    '/':<WelcomeWorld/>,
     '/home':<WelcomeWorld/>,
-    '/games':<GameCatalog/>,
-    '/create-game':<CreateGame/>
+    '/all-games':<GameCatalog/>,
+    '/create':<CreateGame/>,
+    '/login':<Login/>,
+    '/register':<Register/>
   };
   const navigationChangeHandler = (path) =>{
     console.log(path)
