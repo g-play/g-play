@@ -1,6 +1,12 @@
 const LatestGameCard = ({
-    game
+    game,
+    navigationChangeHandler,
 }) =>{
+    const onDetailsClick = (e)=>{
+        e.preventDefault();
+        navigationChangeHandler(`/details/${game._id}`)
+
+    }
     return (
         <div className="game">
         <div className="image-wrap">
@@ -11,7 +17,7 @@ const LatestGameCard = ({
             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
         </div>
         <div className="data-buttons">
-            <a href="#" className="btn details-btn">Details</a>
+            <a href={`/details/${game._id}`}  onClick={onDetailsClick} className="btn details-btn">Details</a>
         </div>
     </div>
     )

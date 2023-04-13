@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import * as gameService from './../services/gameService'
 import LatestGameCard from './GameCatalog/LatestGameCard';
-const WelcomeWorld = () =>{
+const WelcomeWorld = ({
+    navigationChangeHandler
+}) =>{
     const [games,setGame] = useState({});
     useEffect(() =>{
         gameService.getLatest()
@@ -23,7 +25,10 @@ const WelcomeWorld = () =>{
 
         <div id="home-page">
             <h1>Latest Games</h1>
-
+{games.length >0 
+? games.map(x => <LatestGameCard  key={x._id} game={x} navigationChangeHandler={navigationChangeHandler} />)
+: <p className="no-articles">No games yet</p>
+}
             {/* <div className="game">
                 <div className="image-wrap">
                     <img src="/images/CoverFire.png"/>
@@ -37,7 +42,7 @@ const WelcomeWorld = () =>{
                 </div>
             </div> */}
          
-{<p>Import games here</p>||<p className="no-articles">No games yet</p>}
+{/* {<p>Import games here</p>||} */}
             
         </div>
     </section>

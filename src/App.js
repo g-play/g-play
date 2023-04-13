@@ -25,8 +25,8 @@ function App() {
     console.log(argument)
 
     const routes = {
-      '/':<WelcomeWorld/>,
-      'home':<WelcomeWorld/>,
+      '/':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
+      'home':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
       'games':<GameCatalog navigationChangeHandler={navigationChangeHandler}/>,
       'create':<CreateGame/>,
       'login':<Login/>,
