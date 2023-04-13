@@ -11,9 +11,9 @@ const onHeaderClick = (e) =>{
 }
 return (
     <header onClick={onHeaderClick}>
-    <h1><a className="home" href="/">GamesPlay</a></h1>
+    <h1><a className="home" href="/home">GamesPlay</a></h1>
     <nav>
-        <a href="/all-games">All games</a>
+        <a href="/games">All games</a>
         <div id="user">
             <a href="/create">Create Game</a>
             <a href="/logout">Logout</a>

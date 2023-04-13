@@ -10,19 +10,31 @@ import { useState } from "react";
 function App() {
 
   const  [page, setPage] = useState('/home')
-
-
-  const routes = {
-    '/':<WelcomeWorld/>,
-    '/home':<WelcomeWorld/>,
-    '/all-games':<GameCatalog/>,
-    '/create':<CreateGame/>,
-    '/login':<Login/>,
-    '/register':<Register/>
-  };
   const navigationChangeHandler = (path) =>{
     console.log(path)
     setPage(path)
+  }
+
+
+
+  const router =(path) =>{
+    let pathNames = path.split('/')
+    console.log(pathNames)
+    let rootPath = pathNames[1];
+    let argument = pathNames[2];
+    console.log(argument)
+
+    const routes = {
+      '/':<WelcomeWorld/>,
+      'home':<WelcomeWorld/>,
+      'games':<GameCatalog navigationChangeHandler={navigationChangeHandler}/>,
+      'create':<CreateGame/>,
+      'login':<Login/>,
+      'register':<Register/>,
+      'details':<GameDetails id={argument}/>
+  
+    };
+    return routes[rootPath];
   }
 
   return (
@@ -34,7 +46,8 @@ function App() {
 
     <main id="main-content">
     </main>
-{routes[page]|| <h2>No Page Found!</h2>}
+{router(page)|| <h2>No Page Found!</h2>}
+{/* {routes[page]|| <h2>No Page Found!</h2>} */}
 {/* <WelcomeWorld/> */}
    {/* <Login/>
  <Register/>

@@ -1,5 +1,17 @@
+import { useEffect, useState } from 'react';
+import * as gameService from './../services/gameService'
+import LatestGameCard from './GameCatalog/LatestGameCard';
 const WelcomeWorld = () =>{
-
+    const [games,setGame] = useState({});
+    useEffect(() =>{
+        gameService.getLatest()
+     .then(result =>{setGame(result)
+        console.log(result)
+    })
+       
+ 
+      
+    },[]);
     return(
         <section id="welcome-world">
 
@@ -12,7 +24,7 @@ const WelcomeWorld = () =>{
         <div id="home-page">
             <h1>Latest Games</h1>
 
-            <div className="game">
+            {/* <div className="game">
                 <div className="image-wrap">
                     <img src="/images/CoverFire.png"/>
                 </div>
@@ -23,33 +35,10 @@ const WelcomeWorld = () =>{
                 <div className="data-buttons">
                     <a href="#" className="btn details-btn">Details</a>
                 </div>
-            </div>
-            <div className="game">
-                <div className="image-wrap">
-                    <img src="/images/ZombieLang.png"/>
-                </div>
-                <h3>Zombie Lang</h3>
-                <div className="rating">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
-                <div className="data-buttons">
-                    <a href="#" className="btn details-btn">Details</a>
-                </div>
-            </div>
-            <div className="game">
-                <div className="image-wrap">
-                    <img src="/images/MineCraft.png"/>
-                </div>
-                <h3>MineCraft</h3>
-                <div className="rating">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
-                <div className="data-buttons">
-                    <a href="#" className="btn details-btn">Details</a>
-                </div>
-            </div>
-
-            <p className="no-articles">No games yet</p>
+            </div> */}
+         
+{<p>Import games here</p>||<p className="no-articles">No games yet</p>}
+            
         </div>
     </section>
     )
