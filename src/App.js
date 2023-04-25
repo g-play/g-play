@@ -6,15 +6,15 @@ import CreateGame from "./components/CreateGame";
 import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
 import GameCatalog from "./components/GameCatalog/GameCatalog";
-import { useState } from "react";
+// import { useState } from "react";
 import {Route,Switch} from 'react-router-dom'
 function App() {
 
-  const  [page, setPage] = useState('/home')
-  const navigationChangeHandler = (path) =>{
-    console.log(path)
-    setPage(path)
-  }
+  // const  [page, setPage] = useState('/home')
+  // const navigationChangeHandler = (path) =>{
+  //   console.log(path)
+  //   setPage(path)
+  // }
 
 
 
@@ -25,24 +25,24 @@ function App() {
     let argument = pathNames[2];
     console.log(argument)
 
-    const routes = {
-      '/':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
-      'home':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
-      'games':<GameCatalog navigationChangeHandler={navigationChangeHandler}/>,
-      'create':<CreateGame/>,
-      'login':<Login/>,
-      'register':<Register/>,
-      'details':<GameDetails id={argument}/>
+    // const routes = {
+    //   '/':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
+    //   'home':<WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
+    //   'games':<GameCatalog navigationChangeHandler={navigationChangeHandler}/>,
+    //   'create':<CreateGame/>,
+    //   'login':<Login/>,
+    //   'register':<Register/>,
+    //   'details':<GameDetails id={argument}/>
   
-    };
-    return routes[rootPath];
+    // };
+    // return routes[rootPath];
   }
 
   return (
     <div id="box">
 
  <Header 
- navigationChangeHandler={navigationChangeHandler}
+//  navigationChangeHandler={navigationChangeHandler}
  />
 
     <main id="main-content">
