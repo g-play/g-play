@@ -7,6 +7,7 @@ import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
 import GameCatalog from "./components/GameCatalog/GameCatalog";
 import { useState } from "react";
+import {Route,Switch} from 'react-router-dom'
 function App() {
 
   const  [page, setPage] = useState('/home')
@@ -45,8 +46,16 @@ function App() {
  />
 
     <main id="main-content">
+      <Switch>
+      <Route path ="/" exact component={WelcomeWorld}/>
+      <Route path ="/home" component={WelcomeWorld}/>
+      <Route path ="/games" component={GameCatalog}/>
+      <Route path ="/create" component={CreateGame}/>
+      <Route path ="/login"  component={Login}/>
+      <Route path ="/register" component={Register}/>
+      </Switch>
     </main>
-{router(page)|| <h2>No Page Found!</h2>}
+{/* {router(page)|| <h2>No Page Found!</h2>} */}
 {/* {routes[page]|| <h2>No Page Found!</h2>} */}
 {/* <WelcomeWorld/> */}
    {/* <Login/>
