@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link,NavLink} from 'react-router-dom'
 
 const Header = () =>{
 // const onHeaderClick = (e) =>{
@@ -8,18 +8,27 @@ const Header = () =>{
 //         navigationChangeHandler(url.pathname)
 //     }
 // }
+let activeLinkStyles ={
+    backgroundColor:'grey',
+    textDecoration:'underline'
+}
 return (
     <header>
-    <h1><Link className="home" to="/">GamesPlay</Link></h1>
+    <h1><NavLink  className="home" to="/">GamesPlay</NavLink></h1>
     <nav>
-        <Link to="/games">All games</Link>
+        <NavLink activeStyle={{ backgroundColor:'grey',
+    textDecoration:'underline'}}  to="/games">All games</NavLink>
         <div id="user">
-            <Link to="/create">Create Game</Link>
-            <Link to="/logout">Logout</Link>
+            <NavLink activeStyle={{ backgroundColor:'grey',
+    textDecoration:'underline'}} to="/create">Create Game</NavLink>
+            <NavLink activeStyle={{ backgroundColor:'grey',
+    textDecoration:'underline'}} to="/logout">Logout</NavLink>
         </div>
         <div id="guest">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <NavLink  activeStyle={{ backgroundColor:'grey',
+    textDecoration:'underline'}} to="/login">Login</NavLink>
+            <NavLink  activeStyle={{ backgroundColor:'grey',
+    textDecoration:'underline'}} to="/register">Register</NavLink>
         </div>
     </nav>
 </header>

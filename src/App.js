@@ -7,7 +7,7 @@ import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
 import GameCatalog from "./components/GameCatalog/GameCatalog";
 // import { useState } from "react";
-import {Route,Switch} from 'react-router-dom'
+import {Redirect, Route,Switch} from 'react-router-dom'
 function App() {
 
   // const  [page, setPage] = useState('/home')
@@ -54,6 +54,15 @@ function App() {
       <Route path ="/login"  component={Login}/>
       <Route path ="/register" component={Register}/>
       <Route path ="/games/:gameId" component={GameDetails}/>
+      <Route path ="/custom" >
+        <h2>Custom Page</h2>
+        <p>Custom page!</p>
+      </Route>
+      <Route path="/logout" render={(props)=>{
+        console.log('log out! >>>')
+        return <Redirect to="/"/>  }} />
+    
+
 
       </Switch>
     </main>
