@@ -49,10 +49,12 @@ function App() {
       <Switch>
       <Route path ="/" exact component={WelcomeWorld}/>
       <Route path ="/home" component={WelcomeWorld}/>
-      <Route path ="/games" component={GameCatalog}/>
+      <Route path ="/games" exact component={GameCatalog}/>
       <Route path ="/create" component={CreateGame}/>
       <Route path ="/login"  component={Login}/>
       <Route path ="/register" component={Register}/>
+      <Route path ="/games/:gameId" component={GameDetails}/>
+
       </Switch>
     </main>
 {/* {router(page)|| <h2>No Page Found!</h2>} */}
