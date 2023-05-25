@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import * as gameServices from '../services/gameService'
 
 const GameDetails = ({
-    id
+   match
 })=>{
+ 
+let id =match.params.gameId
     const [game,setGame] = useState({});
     useEffect(() =>{
    gameServices.getOne(id)
@@ -12,7 +14,6 @@ const GameDetails = ({
  
       
     },[]);
-    console.log(id)
     return(
         <section id="game-details">
         <h1>Game Details</h1>
